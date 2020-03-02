@@ -3,3 +3,7 @@ dist/**/*
 node_modules/**/*
 tmp/**/*
 tests/cli/fixtures/fixable-error-1.js
+/node_modules/
+!.*
+/bower.json.ember-try
+/package.json.ember-try
