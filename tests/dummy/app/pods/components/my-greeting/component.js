@@ -12,25 +12,15 @@ export default Component.extend({
   // == Properties ============================================================
 
   layout,
-  name: '',
-  salutation: '',
   defaultSalutation: 'Hello',
 
   // == Computed Properties ===================================================
 
-  greeting: computed('salutation', 'name', function (salutation, name) {
+  greeting: computed('salutation', 'name', function (salutation = this.defaultSalutation, name) {
     return `${salutation}, ${name}`
   }).readOnly(),
 
   // == Functions =============================================================
-
-  init () {
-    this._super(...arguments)
-    // setting a default to exercise logic in init for testing purposes
-    if (!this.salutation) {
-      this.set('salutation', this.defaultSalutation)
-    }
-  },
 
   // == Events ================================================================
 
